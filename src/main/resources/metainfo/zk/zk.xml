@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zk>
+    <config-name>kodejava-zk-search</config-name>
+    <client-config>
+        <debug-js>true</debug-js>
+    </client-config>
+    <session-config>
+        <device-type>ajax</device-type>
+        <session-timeout>3600</session-timeout>
+        <automatic-timeout>true</automatic-timeout>
+    </session-config>
+
+    <library-property>
+        <name>org.zkoss.web.classWebResource.cache</name>
+        <value>false</value>
+    </library-property>
+    <library-property>
+        <name>org.zkoss.zk.WPD.cache</name>
+        <value>false</value>
+    </library-property>
+    <library-property>
+        <name>org.zkoss.zk.WCS.cache</name>
+        <value>false</value>
+    </library-property>
+    <library-property>
+        <name>org.zkoss.zk.ZUML.cache</name>
+        <value>false</value>
+    </library-property>
+    <library-property>
+        <name>org.zkoss.util.label.cache</name>
+        <value>false</value>
+    </library-property>
+</zk>

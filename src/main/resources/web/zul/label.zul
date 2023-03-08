@@ -1,0 +1,48 @@
+<zk>
+    <window id="labelSearchWin" zclass="none" border="none" visible="true"
+            apply="org.kodejava.zk.controller.LabelSearchController" width="100%">
+
+        <grid id="searchForm">
+            <columns>
+                <column width="200px"/>
+                <column/>
+            </columns>
+            <rows>
+                <row>
+                    <label value="Label Name"/>
+                    <textbox id="labelNameTextbox" width="450px" maxlength="50"/>
+                </row>
+            </rows>
+        </grid>
+
+        <separator/>
+
+        <hlayout>
+            <button id="searchButton" label="Search"/>
+            <button id="resetButton" label="Reset"/>
+        </hlayout>
+
+        <separator/>
+
+        <vlayout>
+            <listbox id="listbox" mold="paging" pageSize="${labelSearchWin$composer.pageSize}" visible="false">
+                <listhead>
+                    <listheader label="No" hflex="min"/>
+                    <listheader label="Label Name" sort="auto(name)"/>
+                    <listheader label="Action" hflex="min"/>
+                </listhead>
+                <template name="model">
+                    <listitem>
+                        <listcell label="${forEachStatus.index + 1}" hflex="min"/>
+                        <listcell label="${each.name}"/>
+                        <listcell hflex="min">
+                            <hlayout>
+                                <button label="Edit" forward="onClick=listbox.onEdit(${each})" tooltiptext="Edit Data"/>
+                            </hlayout>
+                        </listcell>
+                    </listitem>
+                </template>
+            </listbox>
+        </vlayout>
+    </window>
+</zk>
